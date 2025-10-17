@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+
+# Homebrew
+*.bottle.tar.gz
+*.bottle.json
+
+# Build artifacts
+*.tar.gz
+*.zip
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~

@@ -1,0 +1,42 @@
+name: Homebrew Formula Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test-formula:
+    strategy:
+      matrix:
+        os:
+          - macos-13      # Intel Mac
+          - macos-14      # Apple Silicon Mac
+          - ubuntu-22.04  # Linux x64
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout tap
+        uses: actions/checkout@v4
+
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Test formula installation
+        run: |
+          brew install --build-from-source ./Formula/loadout.rb
+
+      - name: Run formula tests
+        run: |
+          brew test loadout
+
+      - name: Verify installation
+        run: |
+          which loadout
+          loadout --help
+
+      - name: Audit formula
+        run: |
+          brew audit --strict loadout
