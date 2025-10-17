@@ -7,14 +7,14 @@ This is the official Homebrew tap for [Loadout](https://github.com/noheltcj/load
 ### Install via Homebrew Tap
 
 ```bash
-brew tap noheltcj/loadout-tap
+brew tap noheltcj/loadout
 brew install loadout
 ```
 
 ### One-liner Installation
 
 ```bash
-brew install noheltcj/loadout-tap/loadout
+brew install noheltcj/loadout/loadout
 ```
 
 ## Supported Platforms

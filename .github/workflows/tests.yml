@@ -26,7 +26,9 @@ jobs:
 
       - name: Test formula installation
         run: |
-          brew install --build-from-source ./Formula/loadout.rb
+          brew tap-new local/tap
+          cp Formula/loadout.rb $(brew --repository)/Library/Taps/local/homebrew-tap/Formula/
+          brew install --build-from-source local/tap/loadout
 
       - name: Run formula tests
         run: |
