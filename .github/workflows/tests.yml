@@ -27,6 +27,7 @@ jobs:
 
       - name: Test formula installation
         run: |
+          brew untap noheltcj/loadout
           brew -v tap noheltcj/loadout ./
           brew -v install loadout 
 
