@@ -16,19 +16,16 @@ jobs:
           - ubuntu-22.04        # Linux x64
           - ubuntu-24.04-arm64  # Linux arm64
     runs-on: ${{ matrix.os }}
-
     steps:
       - name: Checkout tap
         uses: actions/checkout@v4
 
       - name: Set up Homebrew
         id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@master
+        uses: Homebrew/actions/setup-homebrew@main
 
       - name: Test formula installation
         run: |
-          brew untap noheltcj/loadout
-          brew -v tap noheltcj/loadout ./
           brew -v install loadout 
 
       - name: Run formula tests
