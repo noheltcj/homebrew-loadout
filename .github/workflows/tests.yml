@@ -11,10 +11,10 @@ jobs:
     strategy:
       matrix:
         os:
-          - macos-15-intel      # Intel Mac
-          - macos-15-arm64      # Apple Silicon Mac
-          - ubuntu-22.04        # Linux x64
-          - ubuntu-24.04-arm64  # Linux arm64
+          - macos-15-intel   # Intel Mac
+          - macos-15         # Apple Silicon Mac (arm64 by default)
+          - ubuntu-22.04     # Linux x64 (x64 by default)
+          - ubuntu-22.04-arm # Linux arm64
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout tap
