@@ -58,11 +58,31 @@ brew untap noheltcj/loadout
 
 The formula is located at `Formula/loadout.rb` and supports multi-architecture installation using Homebrew's `on_macos` and `on_linux` DSL blocks.
 
+### Configuring a local tap
+
+If you've already setup the remote tap or installed loadout:
+
+```bash
+# Remove existing installation if necessary
+brew uninstall loadout
+
+# Untap the existing remote tap
+brew untap noheltcj/loadout
+```
+
+To setup a local tap, execute this from the root directory of the cloned project:
+
+```bash
+brew tap noheltcj/loadout ./
+```
+
 ### Testing the Formula Locally
+
+_Note: you must have a tap created from local sources (see above section); otherwise your local changes to the formula won't be executed._
 
 ```bash
 # Install from local tap
-brew install --build-from-source ./Formula/loadout.rb
+brew install loadout
 
 # Run formula tests
 brew test loadout

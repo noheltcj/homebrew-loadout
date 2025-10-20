@@ -11,9 +11,10 @@ jobs:
     strategy:
       matrix:
         os:
-          - macos-13      # Intel Mac
-          - macos-14      # Apple Silicon Mac
-          - ubuntu-22.04  # Linux x64
+          - macos-12            # Intel Mac
+          - macos-14            # Apple Silicon Mac
+          - ubuntu-22.04        # Linux x64
+          - ubuntu-24.04-arm64  # Linux arm64
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -26,9 +27,8 @@ jobs:
 
       - name: Test formula installation
         run: |
-          brew tap-new local/tap
-          cp Formula/loadout.rb $(brew --repository)/Library/Taps/local/homebrew-tap/Formula/
-          brew install --build-from-source local/tap/loadout
+          brew -v tap noheltcj/loadout ./
+          brew -v install loadout 
 
       - name: Run formula tests
         run: |
@@ -36,7 +36,6 @@ jobs:
 
       - name: Verify installation
         run: |
-          which loadout
           loadout --help
 
       - name: Audit formula
