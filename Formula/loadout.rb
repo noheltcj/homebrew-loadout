@@ -1,26 +1,26 @@
 class Loadout < Formula
   desc "CLI tool for managing and composing configuration fragments across projects"
   homepage "https://github.com/noheltcj/loadout"
-  version "0.2.0"
+  version "0.3.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/noheltcj/loadout/releases/download/v0.2.0/loadout-macos-arm64.tar.gz"
-      sha256 "1342101a69c9d08e50ee10107470bf9fd78134e80a07d3bd6d0af2d046fe9dd5"
+      url "https://github.com/noheltcj/loadout/releases/download/v0.3.0/loadout-macos-arm64.tar.gz"
+      sha256 "672057ba37be576b209ffedfbc9bcf5ab7584584fc2008045c4921c81ae390af"
     else
-      url "https://github.com/noheltcj/loadout/releases/download/v0.2.0/loadout-macos-x64.tar.gz"
-      sha256 "2b15b887c5759d735f7b9fda7be4a1af34934364e95790e1945bd8cc657b21b4"
+      url "https://github.com/noheltcj/loadout/releases/download/v0.3.0/loadout-macos-x64.tar.gz"
+      sha256 "0eff058845ab5ed884c8fd548f0665ca81bc0a52dece39d628a123facaebe1ae"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/noheltcj/loadout/releases/download/v0.2.0/loadout-linux-arm64.tar.gz"
-      sha256 "9b26ae58f17809470b7f79034f44fe014e08009c9a009e24b8d233160b12f6b5"
+      url "https://github.com/noheltcj/loadout/releases/download/v0.3.0/loadout-linux-arm64.tar.gz"
+      sha256 "c24ec85f752e0cf91636bc48557181ed9a2713c838f5abbdfda8b0e2fcd21d58"
     else
-      url "https://github.com/noheltcj/loadout/releases/download/v0.2.0/loadout-linux-x64.tar.gz"
-      sha256 "c6b802edbe3f96f66af4524e51d43d10bc893191f8031e8138eb60726f945e6b"
+      url "https://github.com/noheltcj/loadout/releases/download/v0.3.0/loadout-linux-x64.tar.gz"
+      sha256 "b1400c0223f4bd42e81674a2664ebc3db7cba2e5494860f890786e58fcb813b6"
     end
   end
 
