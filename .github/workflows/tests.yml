@@ -24,6 +24,11 @@ jobs:
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@main
 
+      - name: Configure Bundler
+        run: |
+          mkdir -p "$HOME/.bundle"
+          bundle config set --local path "$HOME/.bundle"
+
       - name: Test formula installation
         run: |
           brew -v install loadout 
