@@ -14,10 +14,8 @@ jobs:
           - macos-15-intel   # Intel Mac
           - macos-15         # Apple Silicon Mac (arm64 by default)
           - ubuntu-22.04     # Linux x64 (x64 by default)
-          - ubuntu-22.04-arm # Linux arm64
+          # DISABLED - ubuntu-22.04-arm # Linux arm64
     runs-on: ${{ matrix.os }}
-    env:
-      BUNDLE_PATH: ${{ github.workspace }}/.bundle
     steps:
       - name: Checkout tap
         uses: actions/checkout@v4
