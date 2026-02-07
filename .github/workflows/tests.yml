@@ -16,6 +16,8 @@ jobs:
           - ubuntu-22.04     # Linux x64 (x64 by default)
           - ubuntu-22.04-arm # Linux arm64
     runs-on: ${{ matrix.os }}
+    env:
+      BUNDLE_PATH: ${{ github.workspace }}/.bundle
     steps:
       - name: Checkout tap
         uses: actions/checkout@v4
@@ -23,11 +25,6 @@ jobs:
       - name: Set up Homebrew
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@main
-
-      - name: Configure Bundler for Homebrew
-        run: |
-          mkdir -p "$HOME/.bundle"
-          $(brew --prefix)/Library/Homebrew/vendor/portable-ruby/current/bin/bundle config set --local path "$HOME/.bundle"
 
       - name: Test formula installation
         run: |
